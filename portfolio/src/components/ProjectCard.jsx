@@ -1,14 +1,16 @@
 import React from 'react'
-import Tool from './Tool'
+import {Link} from 'react-router-dom'
 
-const ProjectCard = (props) => {
+const ProjectCard = ({project}) => {
 
   return (
     <div className='projectCard'>
-        <p className='projectTitle'>{props.name}</p>
-        <img src={props.image} alt={props.name} className='projectPreview'/>
-        <p className='projectDetail'>{props.text}</p>
-        <p ></p>
+        <p className='projectTitle'>{project.title}</p>
+        <Link to={project.github}> <img src={project.image} alt={project.title} className='projectPreview'/> </Link>
+        <p className='projectDetail'>{project.description}</p>
+        <p className='toolSet'>
+        {project.tools.map((tool, index) => (<div key={index} className='tool'>{tool}</div>))}
+        </p>
     </div>
   )
 }

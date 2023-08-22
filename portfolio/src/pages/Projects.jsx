@@ -1,17 +1,16 @@
 import React, {useState} from 'react'
 import ProjectCard from '../components/ProjectCard'
+import {ProjectsInfo} from '../data/ProjectInfo';
 
-const Projects = () => {
-    const [projects, setProjects] = useState([])
+const Projects = (props) => {
   return (
     <div className='mainContainer'>
-        <h2 className='title'>Projects</h2>
-        <div className='projectBox'>
-            {projects.map((project, index) => ( 
-                <ProjectCard key={index} projects={projects}/>
-            ))}
-        </div>
-
+      <h2 className='title'>Projects</h2>
+      <div className='projectBox'>
+        {ProjectsInfo.map((project, index) => ( 
+          <ProjectCard key={index} project={project}/>
+        ))}
+      </div>
     </div>
   )
 };
