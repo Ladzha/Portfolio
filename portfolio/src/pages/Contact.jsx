@@ -1,27 +1,32 @@
-import React from 'react'
+import React, { useRef } from 'react';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
 
-    const handleSubmit = (event)=>{
-        event.preventDefault()
-        const clientName = event.target.name.value;
-        const clientEmail = event.target.email.value;
-        const clientMessage = event.target.message.value;
+  const form = useRef();
 
+  const sendEmail = (event) => {
+    event.preventDefault();
 
-
-    }
+    emailjs.sendForm('service_9ngabai', 'template_dgix9t8', form.current, 'hjzuAvyXM_HWZftw8')
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
+      form.current.reset();
+  };
   return (
-    <div className='form'>
-        <p className='title'>Write me a message</p>
-        <form className='contactForm' onSubmit={(event)=>handleSubmit(event)}>
-            <label className='label' htmlFor='name'>You name</label>
-            <input className='input' type='text' id="name" name='name'/>
+    <div className='form column' id='contact'>
+        <h2 className='title'>Write me a message</h2>
+        <form className='contactForm column' ref={form} onSubmit={sendEmail}>
+            <label className='label' htmlFor='name' >You name</label>
+            <input className='input' type='text' name='user_name' placeholder='Enter your name'/>
             <label className='label' htmlFor='email'>Your email</label>
-            <input className='input' type='email' id="email" name = 'email'/>
-            <label className='label' htmlFor='message'>Massage</label>
-            <textarea className='input' id="message" name='message'/>
-            <button className='button'>Send</button>
+            <input className='input' type='email' name = 'user_email' placeholder='Enter your email'/>
+            <label className='label' htmlFor='message'>Message</label>
+            <textarea className='input' name='message' placeholder='Enter your message'/>
+            <button className='button' type="submit" value="Send"> Send </button> 
         </form>
     </div>
   )

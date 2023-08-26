@@ -1,9 +1,12 @@
 import React from 'react'
 
 const Skills = () => {
-    <h2 className='title'>My Skills</h2>
+    
   return (
-    <div className='skillBox'>
+    <div className='column' id='skills'>
+        <h2 className='title'>My Skills</h2>
+
+        <div className='skillBox row'>
         <div className='skill'>
             HTML5
         </div>
@@ -36,6 +39,7 @@ const Skills = () => {
         </div>
         <div className='skill'>
             Django
+        </div>
         </div>
     </div>
   )

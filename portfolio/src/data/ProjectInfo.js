@@ -5,11 +5,11 @@ import projectPreview4 from "../img/preview4.png";
 
 export const ProjectsInfo= [{
     id: 1,
-    title: "Project 1",
-    description: "This is project 1",
+    title: " Diana Wynne Jones Website",
+    description: "This project was created as part of my Full Stack Developer Coding Bootcamp at Developers.Institute in Tel-Aviv. The website is a tribute to the renowned author Diana Wynne Jones, showcasing her life, works, and the magic she brought to the world of literature.",
     image: projectPreview1,
     tools: ["HTML", "CSS"],
-    github: "https://github.com",
+    github: "https://ladzha.github.io/diana-jones",
 },
 {
     id: 2,
@@ -24,7 +24,7 @@ export const ProjectsInfo= [{
     title: "Lula",
     description: "Learning platform for audials",
     image: projectPreview3,
-    tools: ["React", "HTML", "CSS", "JavaScript", "Node.js", "Express.js", "SQL", "ElephantSQL", "Heroku", "Aws S3"],
+    tools: ["React", "HTML", "CSS", "JavaScript", "Node.js", "Express.js", "SQL", "ElephantSQL", "Aws S3"],
     github: "https://github.com",
 },
 {

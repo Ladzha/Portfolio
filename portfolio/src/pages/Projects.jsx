@@ -4,9 +4,9 @@ import {ProjectsInfo} from '../data/ProjectInfo';
 
 const Projects = (props) => {
   return (
-    <div className='mainContainer'>
+    <div className='row' id='projects'>
       <h2 className='title'>Projects</h2>
-      <div className='projectBox'>
+      <div className='projectBox row'>
         {ProjectsInfo.map((project, index) => ( 
           <ProjectCard key={index} project={project}/>
         ))}
